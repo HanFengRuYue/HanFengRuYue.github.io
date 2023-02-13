@@ -46305,7 +46305,7 @@ window['Runtime'] = (function Runtime(__can, __path){
 	            var e;
 	            // START_ADDEXT
 	            e = new CExtLoad();
-	            e.handle = 2;
+	            e.handle = 0;
 	            this.addExt(e);
 	            // INCLUDE_ADDEXT
 	        }
@@ -46359,8 +46359,8 @@ window['Runtime'] = (function Runtime(__can, __path){
 		{
 	        switch (this.handle) {
 	            // START_NEWEXT
-	        case 2:
-	        return new CRunkcwctrl();
+	        case 0:
+	        return new CRunHTML5();
 	            // INCLUDE_NEWEXT
 	        }
 
@@ -51226,7 +51226,7 @@ window['Runtime'] = (function Runtime(__can, __path){
 
 	//----------------------------------------------------------------------------------
 	//
-	// CRUNKCWCTRL Objet Window Control
+	// CRUNHTML5
 	//
 	//----------------------------------------------------------------------------------
 	/* Copyright (c) 1996-2012 Clickteam
@@ -51247,133 +51247,351 @@ window['Runtime'] = (function Runtime(__can, __path){
 	 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 	 * IN THE SOFTWARE.
 	 */
-	CRunkcwctrl.CND_ISICONIC = 0;
-	CRunkcwctrl.CND_ISMAXIMIZED = 1;
-	CRunkcwctrl.CND_ISVISIBLE = 2;
-	CRunkcwctrl.CND_ISAPPACTIVE = 3;
-	CRunkcwctrl.CND_HASFOCUS = 4;
-	CRunkcwctrl.CND_ISATTACHEDTODESKTOP = 5;
-	CRunkcwctrl.CND_LAST = 6;
-	CRunkcwctrl.ACT_SETBACKCOLOR = 23;
-	CRunkcwctrl.EXP_GETXPOSITION = 0;
-	CRunkcwctrl.EXP_GETYPOSITION = 1;
-	CRunkcwctrl.EXP_GETXSIZE = 2;
-	CRunkcwctrl.EXP_GETYSIZE = 3;
-	CRunkcwctrl.EXP_GETSCREENXSIZE = 4;
-	CRunkcwctrl.EXP_GETSCREENYSIZE = 5;
-	CRunkcwctrl.EXP_GETSCREENDEPTH = 6;
-	CRunkcwctrl.EXP_GETCLIENTXSIZE = 7;
-	CRunkcwctrl.EXP_GETCLIENTYSIZE = 8;
-	CRunkcwctrl.EXP_GETTITLE = 9;
-	CRunkcwctrl.EXP_GETBACKCOLOR = 10;
-	CRunkcwctrl.EXP_GETXFRAME = 11;
-	CRunkcwctrl.EXP_GETYFRAME = 12;
-	CRunkcwctrl.EXP_GETWFRAME = 13;
-	CRunkcwctrl.EXP_GETHFRAME = 14;
+	CRunHTML5.CND_JSCRIPT_ONERROR = 0;
+	CRunHTML5.CND_ISPRELOADER = 1;
+	CRunHTML5.CND_MOUSEIN = 2;
+	CRunHTML5.CND_ISIE = 3;
+	CRunHTML5.CND_ISCHROME = 4;
+	CRunHTML5.CND_ISFIREFOX = 5;
+	CRunHTML5.CND_ISSAFARI = 6;
+	CRunHTML5.CND_ISOPERA = 7;
+	CRunHTML5.CND_ISEDGE = 8;
+	CRunHTML5.CND_LAST = 9;
+	CRunHTML5.ACT_OPENURL_SELF = 0;
+	CRunHTML5.ACT_OPENURL_PARENT = 1;
+	CRunHTML5.ACT_OPENURL_TOP = 2;
+	CRunHTML5.ACT_OPENURL_NEW = 3;
+	CRunHTML5.ACT_OPENURL_TARGET = 4;
+	CRunHTML5.ACT_JSCRIPT_RESETPARAMS = 5;
+	CRunHTML5.ACT_JSCRIPT_ADDINTPARAM = 6;
+	CRunHTML5.ACT_JSCRIPT_ADDFLOATPARAM = 7;
+	CRunHTML5.ACT_JSCRIPT_ADDSTRPARAM = 8;
+	CRunHTML5.ACT_JSCRIPT_CALLFUNCTION = 9;
+	CRunHTML5.ACT_SAVECOOKIE = 10;
+	CRunHTML5.EXP_JSCRIPT_GETINTRESULT = 0;
+	CRunHTML5.EXP_JSCRIPT_GETFLOATRESULT = 1;
+	CRunHTML5.EXP_JSCRIPT_GETSTRRESULT = 2;
+	CRunHTML5.EXP_TOTAL = 3;
+	CRunHTML5.EXP_LOADED = 4;
+	CRunHTML5.EXP_PERCENT = 5;
+	CRunHTML5.EXP_BROWSERNAME = 6;
+	CRunHTML5.EXP_BROWSERVERSION = 7;
+	CRunHTML5.EXP_BROWSEROS = 8;
+	CRunHTML5.EXP_GETCOOKIE = 9;
+	CRunHTML5.EXP_GETURL = 10;
+	CRunHTML5.EXP_GETHOST = 11;
+	CRunHTML5.EXP_GETHOSTNAME = 12;
+	CRunHTML5.EXP_GETHASH = 13;
+	CRunHTML5.EXP_GETSEARCH = 14;
 
-	function CRunkcwctrl()
+	function CRunHTML5()
 	{
+		this.parameters = null;
+		this.ret = 0;
+		this.bError = false;
 	}
-	CRunkcwctrl.prototype = CServices.extend(new CRunExtension(),
+
+	CRunHTML5.prototype = CServices.extend(new CRunExtension(),
 		{
 			getNumberOfConditions: function ()
 			{
-				return CRunkcwctrl.CND_LAST;
+				return CRunHTML5.CND_LAST;
 			},
 
-			// Conditions
-			// --------------------------------------------------
-			condition:             function (num, cnd)
+			createRunObject: function (file, cob, version)
+			{
+				this.parameters = new Array();
+				return true;
+			},
+
+			condition: function (num, cnd)
 			{
 				switch (num)
 				{
-					case CRunkcwctrl.CND_ISICONIC:
-						return false;
-					case CRunkcwctrl.CND_ISMAXIMIZED:
-						return false;
-					case CRunkcwctrl.CND_ISVISIBLE:
-						return true;
-					case CRunkcwctrl.CND_ISAPPACTIVE:
-						return true;
-					case CRunkcwctrl.CND_HASFOCUS:
-						return this.rh.rhApp.bActivated;
-					case CRunkcwctrl.CND_ISATTACHEDTODESKTOP:
-						return false;
-				}
+					case CRunHTML5.CND_JSCRIPT_ONERROR:
+						return this.onError();
+					case CRunHTML5.CND_ISPRELOADER:
+						return this.isPreloader();
+					case CRunHTML5.CND_MOUSEIN:
+						return this.ho.hoAdRunHeader.rhApp.bMouseIn;
+					case CRunHTML5.CND_ISIE:
+						return this.rh.rhApp.browserDetect.browser == "Explorer";
+					case CRunHTML5.CND_ISCHROME:
+						return this.rh.rhApp.browserDetect.browser == "Chrome";
+					case CRunHTML5.CND_ISFIREFOX:
+						return this.rh.rhApp.browserDetect.browser == "Firefox";
+					case CRunHTML5.CND_ISSAFARI:
+						return this.rh.rhApp.browserDetect.browser == "Safari";
+					case CRunHTML5.CND_ISOPERA:
+					    return this.rh.rhApp.browserDetect.browser == "Opera";
+				    case CRunHTML5.CND_ISEDGE:
+				        return this.rh.rhApp.browserDetect.browser == "Edge";
+	            }
 				return false;
 			},
 
-			// Expressions
-			// --------------------------------------------
-			getScreenWidth:        function ()
+			isPreloader: function ()
 			{
-				return screen.width;
+			    return this.ho.hoAdRunHeader.rhApp.isPreloaderSubApp;
 			},
-			getScreenHeight:       function ()
+			onError:     function ()
 			{
-				return screen.height;
+				if ((this.ho.hoFlags & CObject.HOF_TRUEEVENT) != 0)
+					return true;
+				if (this.rh.rh4EventCount == this.onErrorCount)
+					return true;
+				return false;
 			},
-			getWindowWidth:        function ()
-			{
-				var winW = 630;
-				if (document.body && document.body.offsetWidth)
-				{
-					winW = document.body.offsetWidth;
-				}
-				if (document.compatMode == 'CSS1Compat' &&
-					document.documentElement &&
-					document.documentElement.offsetWidth)
-				{
-					winW = document.documentElement.offsetWidth;
-				}
-				if (window.innerWidth && window.innerHeight)
-				{
-					winW = window.innerWidth;
-				}
-				return winW;
-			},
-			getWindowHeight:       function ()
-			{
-				return winH;
-			},
-			expression:            function (num)
+
+			action:           function (num, act)
 			{
 				switch (num)
 				{
-					case CRunkcwctrl.EXP_GETXPOSITION:
-						return (0);
-					case CRunkcwctrl.EXP_GETYPOSITION:
-						return (0);
-					case CRunkcwctrl.EXP_GETXSIZE:
-						return window.outerWidth;
-					case CRunkcwctrl.EXP_GETYSIZE:
-						return window.outerHeight;
-					case CRunkcwctrl.EXP_GETSCREENXSIZE:
-						return this.getScreenWidth();
-					case CRunkcwctrl.EXP_GETSCREENYSIZE:
-						return this.getScreenHeight();
-					case CRunkcwctrl.EXP_GETSCREENDEPTH:
-						return window.colorDepth;
-					case CRunkcwctrl.EXP_GETCLIENTXSIZE:
-						return window.innerWidth;
-					case CRunkcwctrl.EXP_GETCLIENTYSIZE:
-						return window.innerHeight;
-					case CRunkcwctrl.EXP_GETTITLE:
-						return document.title;
-					case CRunkcwctrl.EXP_GETBACKCOLOR:
-						return (this.rh.rhApp.gaBorderColour);
-					case CRunkcwctrl.EXP_GETXFRAME:
-						return (0);
-					case CRunkcwctrl.EXP_GETYFRAME:
-						return (0);
-					case CRunkcwctrl.EXP_GETWFRAME:
-						return this.rh.rhApp.gaCxWin;
-					case CRunkcwctrl.EXP_GETHFRAME:
-						return this.rh.rhApp.gaCyWin;
+					case CRunHTML5.ACT_OPENURL_SELF:
+						this.actOpenURLSelf(act);
+						break;
+					case CRunHTML5.ACT_OPENURL_PARENT:
+						this.actOpenURLParent(act);
+						break;
+					case CRunHTML5.ACT_OPENURL_TOP:
+						this.actOpenURLTop(act);
+						break;
+					case CRunHTML5.ACT_OPENURL_NEW:
+						this.actOpenURLNew(act);
+						break;
+					case CRunHTML5.ACT_OPENURL_TARGET:
+						this.actOpenURLTarget(act);
+						break;
+					case CRunHTML5.ACT_JSCRIPT_RESETPARAMS:
+						this.actResetParams();
+						break;
+					case CRunHTML5.ACT_JSCRIPT_ADDINTPARAM:
+						this.actAddIntegerParam(act);
+						break;
+					case CRunHTML5.ACT_JSCRIPT_ADDFLOATPARAM:
+						this.actAddFloatParam(act);
+						break;
+					case CRunHTML5.ACT_JSCRIPT_ADDSTRPARAM:
+						this.actAddStringParam(act);
+						break;
+					case CRunHTML5.ACT_JSCRIPT_CALLFUNCTION:
+						this.actCallFunction(act);
+						break;
+					case CRunHTML5.ACT_SAVECOOKIE:
+						this.actSaveCookie(act);
+						break;
+				}
+			},
+			actSaveCookie:    function (act)
+			{
+				var cookieName = act.getParamExpString(this.rh, 0);
+				var days = act.getParamExpression(this.rh, 1);
+				var content = act.getParamExpString(this.rh, 2);
+
+				var expires = new Date();
+				if (days <= 0)
+					days = 10000;
+				expires.setTime(expires.getTime() + (1000 * 60 * 60 * 24 * days));
+				var cookie = cookieName + "=" + escape(content) + "; path=/; expires=" + expires.toGMTString();
+				document.cookie = cookie;
+			},
+			actOpenURLSelf:   function (act)
+			{
+				var url = act.getParamExpString(this.rh, 0);
+				window.open(url, "_self");
+			},
+			actOpenURLParent: function (act)
+			{
+				var url = act.getParamExpString(this.rh, 0);
+				window.open(url, "_parent");
+			},
+			pactOpenURLTop:   function (act)
+			{
+				var url = act.getParamExpString(this.rh, 0);
+				window.open(url, "_top");
+			},
+			actOpenURLNew:    function (act)
+			{
+				var url = act.getParamExpString(this.rh, 0);
+				window.open(url, "_blank");
+			},
+			actOpenURLTarget: function (act)
+			{
+				var url = act.getParamExpString(this.rh, 0);
+				var target = act.getParamExpString(this.rh, 1);
+				window.open(url, target);
+			},
+
+			actResetParams:     function ()
+			{
+				this.parameters = null;
+			},
+			actAddIntegerParam: function (act)
+			{
+				if (this.parameters == null)
+					this.parameters = new Array();
+				var p = act.getParamExpression(this.rh, 0);
+				this.parameters.push(p);
+			},
+			actAddStringParam:  function (act)
+			{
+				if (this.parameters == null)
+					this.parameters = new Array();
+				var p = act.getParamExpString(this.rh, 0);
+				this.parameters.push(p);
+			},
+			actAddFloatParam:   function (act)
+			{
+				if (this.parameters == null)
+					this.parameters = new Array();
+				var p = act.getParamExpDouble(this.rh, 0);
+				this.parameters.push(p);
+			},
+			actCallFunction:    function (act)
+			{
+				if (this.parameters == null)
+					this.parameters = new Array();
+
+				var func = act.getParamExpString(this.rh, 0);
+				this.bError = false;
+				try
+				{
+					if (this.parameters.length == 0) {
+						if(func.indexOf("(") != -1 || func.indexOf(".") != -1  || func.indexOf("[") != -1)
+							this.ret = eval(func);
+						else
+							this.ret = window[func]();
+					}
+				    else if (this.parameters.length <= 11) {
+				        this.ret = window[func](this.parameters[0], this.parameters[1], this.parameters[2], this.parameters[3], this.parameters[4],
+						    this.parameters[5], this.parameters[6], this.parameters[7], this.parameters[8], this.parameters[9], this.parameters[10]);
+				    }
+				    else {
+				        this.ret = window[func](this.parameters[0], this.parameters[1], this.parameters[2], this.parameters[3], this.parameters[4],
+						    this.parameters[5], this.parameters[6], this.parameters[7], this.parameters[8], this.parameters[9], this.parameters[10],
+						    this.parameters[11], this.parameters[12], this.parameters[13], this.parameters[14], this.parameters[15], this.parameters[16],
+						    this.parameters[17], this.parameters[18], this.parameters[19], this.parameters[20], this.parameters[21], this.parameters[22]
+	                        );
+				    }
+				}
+				catch (e)
+				{
+					console.log("Error on: "+func+" and msg: "+e.message);
+					this.bError = true;
+					this.onErrorCount = this.ho.getEventCount();
+					this.ho.generateEvent(CRunHTML5.CND_JSCRIPT_ONERROR, 0);
+				}
+				this.parameters = null;
+			},
+
+			expression:         function (num)
+			{
+				switch (num)
+				{
+					case CRunHTML5.EXP_JSCRIPT_GETINTRESULT:
+						return this.expGetIntResult();
+					case CRunHTML5.EXP_JSCRIPT_GETFLOATRESULT:
+						return this.expGetNumberResult();
+					case CRunHTML5.EXP_JSCRIPT_GETSTRRESULT:
+						return this.expGetStringResult();
+					case CRunHTML5.EXP_TOTAL:
+						return this.expTotal();
+					case CRunHTML5.EXP_LOADED:
+						return this.expLoaded();
+					case CRunHTML5.EXP_PERCENT:
+						return this.expPercent();
+					case CRunHTML5.EXP_BROWSERNAME:
+						return this.rh.rhApp.browserDetect.browser;
+					case CRunHTML5.EXP_BROWSERVERSION:
+						return this.rh.rhApp.browserDetect.version;
+					case CRunHTML5.EXP_BROWSEROS:
+						return this.rh.rhApp.browserDetect.OS;
+					case CRunHTML5.EXP_GETCOOKIE:
+						return this.expGetCookie();
+					case CRunHTML5.EXP_GETURL:
+						return window.location.href;
+					case CRunHTML5.EXP_GETHOST:
+						return window.location.host;
+					case CRunHTML5.EXP_GETHOSTNAME:
+						return window.location.hostname;
+					case CRunHTML5.EXP_GETHASH:
+						return window.location.hash;
+					case CRunHTML5.EXP_GETSEARCH:
+						return window.location.search;
 				}
 				return 0;
+			},
+			getCookie:          function (name)
+			{
+				var dc = document.cookie;
+				var cname = name + "=";
+
+				if (dc.length > 0)
+				{
+					var begin = dc.indexOf(cname);
+					if (begin != -1)
+					{
+						begin += cname.length;
+						end = dc.indexOf(";", begin);
+						if (end == -1)
+							end = dc.length;
+						return unescape(dc.substring(begin, end));
+					}
+				}
+				return null;
+			},
+			expGetCookie:       function ()
+			{
+				var cookieName = this.ho.getExpParam();
+				var cookie = this.getCookie(cookieName);
+				if (!cookie)
+					cookie = "";
+				return cookie;
+			},
+			expTotal:           function ()
+			{
+				if (this.rh.rhApp.parentApp != null)
+					return this.rh.rhApp.parentApp.imagesToLoad;
+				return 0;
+			},
+			expLoaded:          function ()
+			{
+				if (this.rh.rhApp.parentApp != null)
+					return this.rh.rhApp.parentApp.imagesLoaded;
+				return 0;
+			},
+			expPercent:         function ()
+			{
+				if (this.rh.rhApp.parentApp != null)
+				{
+					if (this.rh.rhApp.parentApp.imagesToLoad != 0)
+					{
+						return (this.rh.rhApp.parentApp.imagesLoaded * 100) / this.rh.rhApp.parentApp.imagesToLoad;
+					}
+				}
+				return 0;
+			},
+			expGetStringResult: function ()
+			{
+				if (typeof this.ret == "string")
+					return this.ret;
+				return "";
+			},
+			expGetNumberResult: function ()
+			{
+				if (typeof this.ret == "number")
+					return this.ret;
+				return "";
+			},
+			expGetIntResult:    function ()
+			{
+				if (typeof this.ret == "number")
+					return CServices.floatToInt(this.ret);
+				return "";
 			}
 		});
+
+
 
 
 	Runtime(__can, __path); 

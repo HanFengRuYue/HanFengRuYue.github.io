@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="zh-Hans">
 
 <head>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="bookmark" href="/favicon.ico"/>
 <meta http-equiv="Content-Type" name="viewport" content="width=device-width, initial-scale=1, text/html; charset=UTF-8" />
 <style type="text/css">
 body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	min-height: 100%;
-	margin: 0;	
-	background: rgb(238,238,238); /* Old browsers */
+	margin: 0;
+	background: rgb(0, 0, 0); /* Old browsers */
 }
 #border {
 	margin: 0 auto;
@@ -64,13 +66,15 @@ body {
 
 <!-- This is where we create the Canvas element that will contain the application...-->
 <body>
-	<div id="border">
-		<div id="canvas">
-			<canvas id="MMFCanvas" width="1920" height="5000">
-				<p>你的浏览器不支持 Canvas.</p>
-			</canvas>   
-		</div>
-	</div>
+    <div id="wrapper">
+	    <div id="border">
+		    <div id="canvas">
+			    <canvas id="MMFCanvas" width="1920" height="5000">
+				    <p>你的浏览器不支持 Canvas.</p>
+			    </canvas>   
+		    </div>
+	    </div>
+    </div>  
     <script>
         // RUNTIMESTART
 	    // This is where the HTML5 runtime is actually started

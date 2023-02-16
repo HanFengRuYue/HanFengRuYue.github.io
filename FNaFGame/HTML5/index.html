@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>FNaF游戏合集</title>
+    <link rel="shortcut icon" type="image/x-icon" href="myicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/Home.css">
+    <style>
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(font/MiSans-Normal.ttf);
+        }
+
+        body
+        {
+            font-family: "myFirstFont", Arial, sans-serif;
+            background-image: url('img/background.jpg');
+            background-size: cover;
+        }
+        .banner 
+        {
+            width: 100%;
+            height: 400px;
+            background-image: url('img/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-top: 20px;
+            border-radius:20px;
+        }
+
+    </style>
+  </head>  
+
+  <audio id="click-sound" src="audio/click.wav"></audio>
+
+  <script>
+    function bounce(img) {
+      img.style.position = 'relative';
+      img.style.top = '-10px';
+      document.getElementById('click-sound').play();
+      setTimeout(function() {
+        img.style.top = '0px';
+      }, 300);
+    }
+    </script>
+    
+  <body>
+    <h1 class="title">高清/汉化合集</h1>
+    <div class="banner"></div>
+    <h1 class="subtitle">Five Nights at Freddy's 正传</h1>
+    <div class="img-container">
+        <div>
+            <a href="FNaF1.html" target="_blank">
+                <img src="img/FNaF1.jpg" alt="Image 1" onclick="bounce(this)">
+            </a>
+            <p>Five Nights at Freddy's 1</p>
+        </div>
+        <div>
+            <a href="FNaF2.html" target="_blank">
+                <img src="img/FNaF2.jpg" alt="Image 2" onclick="bounce(this)">
+            </a>
+            <p>Five Nights at Freddy's 2</p>
+        </div>
+        <div>
+            <a href="FNaF3.html" target="_blank">
+                <img src="img/FNaF3.jpg" alt="Image 3" onclick="bounce(this)">
+            </a>
+            <p>Five Nights at Freddy's 3</p>
+        </div>
+        <div>
+            <a href="FNaF4.html" target="_blank">
+                <img src="img/FNaF4.jpg" alt="Image 4" onclick="bounce(this)">
+            </a>
+            <p>Five Nights at Freddy's 4</p>
+        </div>
+        <div>
+            <a href="FNaF5.html" target="_blank">
+                <img src="img/FNaFSL.jpg" alt="Image 5" onclick="bounce(this)">
+            </a>
+            <p>Five Nights at Freddy's<br>姐妹地点/姐妹篇</p>
+        </div>
+        <div>
+            <a href="FFPS.html" target="_blank">
+                <img src="img/FFPS.jpg" alt="Image 6" onclick="bounce(this)">
+            </a>
+            <p>Freddy Fazbear's<br>披萨店模拟器</p>
+        </div>
+        <div>
+            <a href="UCN.html" target="_blank">
+                <img src="img/UCN.jpg" alt="Image 7" onclick="bounce(this)">
+            </a>
+            <p>终极自定义夜</p>
+        </div>
+        <div>
+            <a href="FNaFSB.html" target="_blank">
+                <img src="img/FNaFSB.jpg" alt="Image 8" onclick="bounce(this)">
+            </a>
+            <p>Freddy Fazbear's<br>安全漏洞</p>
+        </div>
+    </div>
+    <h1 class="subtitle">Five Nights at Freddy's 衍生游戏</h1>
+    <div class="img-container">
+        <div>
+            <a href="FNaFW.html" target="_blank">
+                <img src="img/FNaFW.jpg" alt="Image 9" onclick="bounce(this)">
+            </a>
+            <p>FNaF 世界篇</p>
+        </div>
+    </div>
+    <h1 class="subtitle">Five Nights at Freddy's 整活游戏</h1>
+    <div class="img-container">
+        <div>
+            <a href="FNaFMA.html" target="_blank">
+                <img src="img/FNaFMA.jpg" alt="Image 10" onclick="bounce(this)">
+            </a>
+            <p>SL:MA</p>
+        </div>
+    </div>
+    <h1 class="subtitle">Scott Cawthon制作的其他游戏</h1>
+    <div class="img-container">
+        <div>
+            <img src="img/THD.jpg" alt="Image 11" onclick="bounce(this)">
+            <p>荒凉的希望</p>
+        </div>
+    </div>
+    <h1 class="subtitle">粉丝同人</h1>
+    <div class="img-container">
+        <div>
+            <img src="img/DM.jpg" alt="Image 12" onclick="bounce(this)">
+            <p>安眠</p>
+        </div>
+        <div>
+            <img src="img/J1.jpg" alt="Image 13" onclick="bounce(this)">
+            <p>Jolly</p>
+        </div>
+        <div>
+            <img src="img/J2.jpg" alt="Image 14" onclick="bounce(this)">
+            <p>Jolly2</p>
+        </div>
+        <div>
+            <img src="img/J3c1.jpg" alt="Image 15" onclick="bounce(this)">
+            <p>Jolly3 第一章</p>
+        </div>
+        <div>
+            <img src="img/J3c2.jpg" alt="Image 16" onclick="bounce(this)">
+            <p>Jolly3 第二章</p>
+        </div>
+    </div>
+    <footer>
+        FNaF游戏合集 | 网页制作：寒枫如玥
+    </footer>
+  </body>
+</html>

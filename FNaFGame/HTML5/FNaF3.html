@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Five Nights at Freddy's 3</title>
+    <link rel="shortcut icon" type="image/x-icon" href="myicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/Page.css">
+    <style>
+        body
+        {
+            font-family: "myFirstFont", sans-serif;
+            background-image: url('img/backgroundFNaF3.png');
+            background-size: cover;
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(font/MiSans-Normal.ttf);
+        }
+    </style>
+  </head>  
+
+  <audio id="click-sound" src="audio/click.wav"></audio>
+
+  <script>
+    function bounce(img) {
+      img.style.position = 'relative';
+      img.style.top = '-10px';
+      document.getElementById('click-sound').play();
+      setTimeout(function() {
+        img.style.top = '0px';
+      }, 300);
+    }
+    </script>
+    
+  <body>
+    <h1 class="title">Five Nights at Freddy's 3</h1>
+    <h1 class="subtitle">游戏截图</h1>
+    <div class="img-container">
+        <div>
+            <video controls>
+                <source src="https://cdn.cloudflare.steamstatic.com/steam/apps/2037604/movie_max.webm" type="video/webm">
+              您的浏览器不支持HTML5 Video。
+            </video>
+        </div>
+        <div class="img">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/354140/ss_ffcb2ebf7e91f0285666e13d5015ff93284071e7.600x338.jpg" alt="Image 1" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/354140/ss_94e21b748afa40e7eed04b31ecf1e60c23465289.600x338.jpg" alt="Image 2" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/354140/ss_9974db810cc8358a7be91b39b8a43b0fc29d5807.600x338.jpg" alt="Image 3" onclick="bounce(this)">
+        </div>
+    </div>
+    <h1 class="subtitle">简介</h1>
+    <div class="introduction">
+        <div>
+            <p>
+                在弗莱迪费兹熊(FreddyFazbear)披萨店关门30年后，那里发生的事情已经变成了一个谣言和童年的记忆，但一个“费兹熊惊吓恐怖景点”的老板决心复刻这个传说，让顾客尽可能真实地体验这个体验，不遗余力地寻找任何可能在几十年的忽视和毁灭中幸存下来的东西。
+            </p>
+            <p>
+                一开始只有空壳，一只手，一个钩子，一个旧的纸板娃娃，但后来有了一个了不起的发现……
+            </p>
+            <p>
+                现在景点里有了一只电子玩偶。。。
+            </p>
+        </div>
+    </div>
+    <h1 class="subtitle">游戏地址</h1>
+    <div class="introduction">
+        <h2>正版途径</h2>
+        <a href="https://store.steampowered.com/app/354140" target="_blank"><h3>https://store.steampowered.com/app/354140</h3></a>
+        <h2>原版文件</h2>
+        <a href="https://pan.baidu.com/s/1yoF2cfszkEV-2XBwuCcPFA?pwd=fna3" target="_blank"><h3>https://pan.baidu.com/s/1yoF2cfszkEV-2XBwuCcPFA?pwd=fna3</h3></a>
+        <h2>高清汉化版</h2>
+        <a href="https://pan.baidu.com/s/1xMWu8G2dE3o3AiDFfvSEAQ?pwd=fna3" target="_blank"><h3>https://pan.baidu.com/s/1xMWu8G2dE3o3AiDFfvSEAQ?pwd=fna3</h3></a>    
+    </div>
+    <footer>
+        FNaF游戏合集 | 网页制作：寒枫如玥
+    </footer>
+  </body>
+</html>

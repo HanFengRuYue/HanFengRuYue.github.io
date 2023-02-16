@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Five Nights at Freddy's Sister Location</title>
+    <link rel="shortcut icon" type="image/x-icon" href="myicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/Page.css">
+    <style>
+        body
+        {
+            font-family: "myFirstFont", sans-serif;
+            background-image: url('img/backgroundFNaF5.png');
+            background-size: cover;
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(font/MiSans-Normal.ttf);
+        }
+    </style>
+  </head>  
+
+  <audio id="click-sound" src="audio/click.wav"></audio>
+
+  <script>
+    function bounce(img) {
+      img.style.position = 'relative';
+      img.style.top = '-10px';
+      document.getElementById('click-sound').play();
+      setTimeout(function() {
+        img.style.top = '0px';
+      }, 300);
+    }
+    </script>
+    
+  <body>
+    <h1 class="title">Five Nights at Freddy's 姐妹地点/姐妹篇</h1>
+    <h1 class="subtitle">游戏截图</h1>
+    <div class="img-container">
+        <div>
+            <video controls>
+                <source src="https://cdn.cloudflare.steamstatic.com/steam/apps/256667465/movie_max.webm" type="video/webm">
+              您的浏览器不支持HTML5 Video。
+            </video>
+        </div>
+        <div class="img">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/506610/ss_a6d055ff2a374183e7349a7355327a7b7884c680.600x338.jpg" alt="Image 1" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/506610/ss_9a91cb224773f420643477106df3d1daa948504e.600x338.jpg" alt="Image 2" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/506610/ss_66c7936da8988b9a1dc788890181212078756107.600x338.jpg" alt="Image 3" onclick="bounce(this)">
+        </div>
+    </div>
+    <h1 class="subtitle">简介</h1>
+    <div class="introduction">
+        <div>
+            <p>
+                欢迎来到Circus Baby's Pizza World，这里的家庭娱乐和互动超越了你在那些其他比萨店看到的一切！我们拥有最先进的电子玩偶，他们将让你的孩子们目瞪口呆，此外还提供定制比萨餐饮服务，没有Circus Baby和她的团队，任何派对都不是完整的！
+            </p>
+            <p>
+                现在正在招聘：深夜技术员。必须喜欢狭小的空间并且熟悉活动机械设备。对于死亡或肢体残缺不承担责任。
+            </p>
+        </div>
+    </div>
+    <h1 class="subtitle">游戏地址</h1>
+    <div class="introduction">
+        <h2>正版途径</h2>
+        <a href="http://store.steampowered.com/app/506610" target="_blank"><h3>http://store.steampowered.com/app/506610</h3></a>
+        <h2>原版文件</h2>
+        <a href="https://pan.baidu.com/s/1TkBil5cKvUoCdmMbkdZ3Dg?pwd=fna5" target="_blank"><h3>https://pan.baidu.com/s/1TkBil5cKvUoCdmMbkdZ3Dg?pwd=fna5</h3></a>
+        <h2>高清汉化版</h2>
+        <a href="https://pan.baidu.com/s/1Pkk4NFlM_NGWkMiEJ3Rl_g?pwd=fna5" target="_blank"><h3>https://pan.baidu.com/s/1Pkk4NFlM_NGWkMiEJ3Rl_g?pwd=fna5</h3></a>    
+    </div>
+    <footer>
+        FNaF游戏合集 | 网页制作：寒枫如玥
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Five Nights at Freddy's Security Breach</title>
+    <link rel="shortcut icon" type="image/x-icon" href="myicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/Page.css">
+    <style>
+        body
+        {
+            font-family: "myFirstFont", sans-serif;
+            background-image: url('img/backgroundSB.png');
+            background-size: cover;
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(font/MiSans-Normal.ttf);
+        }
+    </style>
+  </head>  
+
+  <audio id="click-sound" src="audio/click.wav"></audio>
+
+  <script>
+    function bounce(img) {
+      img.style.position = 'relative';
+      img.style.top = '-10px';
+      document.getElementById('click-sound').play();
+      setTimeout(function() {
+        img.style.top = '0px';
+      }, 300);
+    }
+    </script>
+    
+  <body>
+    <h1 class="title">Five Nights at Freddy's 安全漏洞</h1>
+    <h1 class="subtitle">游戏截图</h1>
+    <div class="img-container">
+        <div>
+            <video controls>
+                <source src="https://cdn.cloudflare.steamstatic.com/steam/apps/256860809/movie_max.webm" type="video/webm">
+              您的浏览器不支持HTML5 Video。
+            </video>
+        </div>
+        <div class="img">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/747660/ss_787bcec3c0f3adf47034a51dc8a8de64819ec291.600x338.jpg" alt="Image 1" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/747660/ss_2874a41edd697fc0eed5783e560d2ec89a1a8415.600x338.jpg" alt="Image 2" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/747660/ss_b3e64e1e3ca54688ccedebafbfb5a9d255a67a1f.600x338.jpg" alt="Image 3" onclick="bounce(this)">
+        </div>
+    </div>
+    <h1 class="subtitle">简介</h1>
+    <div class="introduction">
+        <div>
+            <p>
+                恐惧的下一章
+            </p>
+            <p>
+                《玩具熊的五夜后宫:安全漏洞》是受全球数百万玩家喜爱的家庭友好型恐怖游戏的最新版本。玩家将扮演格雷戈里，一个被困在弗莱迪费兹熊的大型披萨店过夜的小男孩。在弗莱迪费兹熊(Freddy Fazbear)的帮助下，格雷戈里必须在几乎不可阻挡的重新想象的玩具熊的五夜后玩具角色的追捕中幸存下来，以及新的、可怕的威胁。
+            </p>
+            <p>
+                猎人和猎物—一旦夜间协议启动，弗莱迪费兹熊(Freddy Fazbear)的大型披萨店的电子机器人将无情地追逐所有入侵者。格拉姆洛克·奇卡、罗克珊·沃尔夫、蒙哥马利·盖特和披萨店的保安凡妮莎，如果有必要的话，他们会把每个棉花糖披萨摊都翻个遍———在一个地方呆太久并不明智。
+            </p>
+            <p>
+                适应生存—进入大楼的安全监控来调查环境，并计划通过危险的路线。通过打翻油漆罐和玩具来分散敌人的注意力-只是在敌人被吸引到你的位置之前溜走。跳进隐藏的地方，让危险过去，或试着逃离你的追捕者。发挥你的方式，但要准备好适应这些危险。
+            </p>
+            <p>
+                探索和发现-弗莱迪费兹熊Mega Pizzaplex提供各种吸引客人享受-Monty Golf，Roxy Raceway，Bonnie Bowl，下水道，……下水道？Pizzaplex很大，有很多东西供你发现。
+            </p>
+        </div>
+    </div>
+    <h1 class="subtitle">游戏地址</h1>
+    <div class="introduction">
+        <h2>正版途径</h2>
+        <a href="https://store.steampowered.com/app/747660" target="_blank"><h3>https://store.steampowered.com/app/747660</h3></a>
+        <h2>中文修正补丁</h2>
+        <a href="https://github.com/HanFengRuYue/FNAF-SecurityBreach_Chinese" target="_blank"><h3>https://github.com/HanFengRuYue/FNAF-SecurityBreach_Chinese</h3></a>    
+    </div>
+    <footer>
+        FNaF游戏合集 | 网页制作：寒枫如玥
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Jolly 3C1</title>
+    <link rel="shortcut icon" type="image/x-icon" href="myicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/Page.css">
+    <style>
+        body
+        {
+            font-family: "myFirstFont", sans-serif;
+            background-image: url('img/backgroundJ3C1.png');
+            background-size: cover;
+        }
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(font/MiSans-Normal.ttf);
+        }
+    </style>
+  </head>  
+
+  <audio id="click-sound" src="audio/click.wav"></audio>
+
+  <script>
+    function bounce(img) {
+      img.style.position = 'relative';
+      img.style.top = '-10px';
+      document.getElementById('click-sound').play();
+      setTimeout(function() {
+        img.style.top = '0px';
+      }, 300);
+    }
+    </script>
+    
+  <body>
+    <h1 class="title">Jolly 3 第一章</h1>
+    <h1 class="subtitle">游戏截图</h1>
+    <div class="img-container">
+        <div>
+            <iframe src="https://www.youtube.com/embed/s0SoDdob2Yc" title="JOLLY 3 Chapter 2 Announcement Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        
+        </div>
+        <div class="img">
+            <img src="https://m.gjcdn.net/game-screenshot/300/827820-umpucqg3-v4.webp" alt="Image 1" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://m.gjcdn.net/game-screenshot/300/814846-s4s8whj6-v4.webp" alt="Image 2" onclick="bounce(this)">
+        </div>
+        <div>
+            <img src="https://m.gjcdn.net/game-screenshot/300/796627-3s7rksai-v4.webp" alt="Image 3" onclick="bounce(this)">
+        </div>
+    </div>
+    <h1 class="subtitle">简介</h1>
+    <div class="introduction">
+        <div>
+            <p>
+                事件发生的32年后，一家独立娱乐公司着手解开弗莱迪费兹熊披萨店的未解之谜。这个万圣节，他们将开放一个名为“费兹熊恐惧”的恐怖景点，展示来自童年回忆的古老文物。
+            </p>
+            <p>
+                这一次，他们要到各地寻找更多的东西来放入景点中。他们的第一个目标在一个废弃的工厂里，Jolly娱乐公司曾经在那里。阴谋论家们都非常兴奋，希望找到能够解开谜团的线索。
+            </p>
+        </div>
+    </div>
+    <h1 class="subtitle">游戏地址</h1>
+    <div class="introduction">
+        <h2>正版途径</h2>
+        <a href="https://gamejolt.com/games/jolly-3-official/218061" target="_blank"><h3>https://gamejolt.com/games/jolly-3-official/218061</h3></a>
+        <h2>Window高清汉化版</h2>
+        <a href="https://pan.baidu.com/s/1oqvtZMvN1x6nmO5onkohpw?pwd=jol3" target="_blank"><h3>https://pan.baidu.com/s/1oqvtZMvN1x6nmO5onkohpw?pwd=jol3</h3></a>
+        <h2>Android高清汉化版</h2>
+        <a href="https://pan.baidu.com/s/1VM1aleLr3DAOWi5xNSnSxg?pwd=jo31" target="_blank"><h3>https://pan.baidu.com/s/1VM1aleLr3DAOWi5xNSnSxg?pwd=jo31</h3></a>
+    </div>
+    <footer>
+        FNaF游戏合集 | 网页制作：寒枫如玥
+    </footer>
+  </body>
+</html>

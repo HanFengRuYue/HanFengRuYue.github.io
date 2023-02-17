@@ -32,8 +32,10 @@ h1.subtitle {
 }
 .img-container img
 {
-    width: 400px;
-    height: 225px;
+    width: 80vw;
+    height: 45vw;
+    max-width: 400px;
+    max-height: 225px;
     margin-right:25px;
     margin-left:25px;
     margin-top:50px;

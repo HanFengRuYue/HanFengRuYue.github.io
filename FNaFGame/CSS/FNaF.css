@@ -1,0 +1,41 @@
+h1 {
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin-left: 30px;
+}
+/* 添加样式，设置分割线的样式，包括颜色、宽度、样式和圆角 */
+hr {
+    border: none;
+    height: 6px;
+    background-color: white;
+    border-radius: 5px;
+}
+/* 添加样式，将p文本居中对齐 */
+p {
+    text-align: left;
+    text-indent: 2em;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px #000000;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* 添加样式，将标题居中对齐，设置字体颜色和字体大小 */
+h2 {
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    margin-left: 30px;
+    text-shadow: 2px 2px #000000;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(120, 120, 255);
+}

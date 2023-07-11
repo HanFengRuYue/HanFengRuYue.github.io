@@ -1,0 +1,50 @@
+/* 添加样式，设置背景 */
+body {
+    background: linear-gradient(to right, #0205b1, #0088b6);
+}
+/* 添加样式，将标题文字颜色设置为白色，添加阴影，向右移动30像素 */
+h1 {
+    color: white;
+    text-shadow: 2px 2px #000000;
+    margin-left: 30px;
+}
+/* 添加样式，设置分割线的样式，包括颜色、宽度、样式和圆角 */
+hr {
+    border: none;
+    height: 6px;
+    background-color: white;
+    border-radius: 5px;
+}
+/* 添加样式，将p文本居中对齐 */
+p {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px #000000;
+}
+
+/* 添加样式，将标题居中对齐，设置字体颜色和字体大小 */
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px #000000;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(120, 120, 255);
+}
+
+/* 添加样式，将标题居中对齐，设置字体颜色和字体大小 */
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px #000000;
+    font-weight: 600;
+}
